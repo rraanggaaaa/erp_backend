@@ -1,7 +1,6 @@
 package api
 
 import (
-	"log"
 	"net/http"
 	"sync"
 
@@ -12,17 +11,23 @@ import (
 var (
 	handler http.Handler
 	once    sync.Once
+	initErr error
 )
 
 func initHandler() {
-	if err := config.ConnectDatabase(); err != nil {
-		log.Fatalf("Database connection failed: %v", err)
+	initErr = config.ConnectDatabase()
+	if initErr == nil {
+		handler = routes.SetupRouter()
 	}
-
-	handler = routes.SetupRouter()
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	once.Do(initHandler)
+
+	if initErr != nil {
+		http.Error(w, initErr.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	handler.ServeHTTP(w, r)
 }
