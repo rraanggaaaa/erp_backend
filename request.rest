@@ -1,0 +1,88 @@
+@baseUrl=http://localhost:8080/api/v1
+@contentType=application/json
+
+###############################################
+# HEALTH CHECK
+###############################################
+
+GET {{baseUrl}}/health
+
+###
+
+###############################################
+# GET ALL SUPPLIERS
+###############################################
+
+GET {{baseUrl}}/suppliers
+
+###
+
+###############################################
+# GET ALL (Pagination)
+###############################################
+
+GET {{baseUrl}}/suppliers?page=1&limit=10
+
+###
+
+###############################################
+# SEARCH SUPPLIER
+###############################################
+
+GET {{baseUrl}}/suppliers?search=setroom
+
+###
+
+###############################################
+# SEARCH + PAGINATION
+###############################################
+
+GET {{baseUrl}}/suppliers?search=pt&page=1&limit=5
+
+###
+
+###############################################
+# GET SUPPLIER BY ID
+###############################################
+
+GET {{baseUrl}}/suppliers/7c61179a-e277-4599-aad9-6f28138d3cdf
+
+###
+
+###############################################
+# CREATE SUPPLIER
+###############################################
+
+POST {{baseUrl}}/suppliers
+Content-Type: {{contentType}}
+
+{
+    "supplier_name": "PT Microsoft Indonesia",
+    "nickname": "Microsoft",
+    "status": "Active"
+}
+
+###
+
+###############################################
+# UPDATE SUPPLIER
+###############################################
+
+PUT {{baseUrl}}/suppliers/7c61179a-e277-4599-aad9-6f28138d3cdf
+Content-Type: {{contentType}}
+
+{
+    "supplier_name": "PT Microsoft Indonesia Updated",
+    "nickname": "MS Indonesia",
+    "status": "Inactive"
+}
+
+###
+
+###############################################
+# DELETE SUPPLIER
+###############################################
+
+DELETE {{baseUrl}}/suppliers/7c61179a-e277-4599-aad9-6f28138d3cdf
+
+###
