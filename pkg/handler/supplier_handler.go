@@ -6,10 +6,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/rraanggaaaa/erp_backend/internal/dto"
-	"github.com/rraanggaaaa/erp_backend/internal/model"
-	"github.com/rraanggaaaa/erp_backend/internal/repository"
-	"github.com/rraanggaaaa/erp_backend/internal/utils"
+	"github.com/rraanggaaaa/erp_backend/pkg/dto"
+	"github.com/rraanggaaaa/erp_backend/pkg/model"
+	"github.com/rraanggaaaa/erp_backend/pkg/repository"
+	"github.com/rraanggaaaa/erp_backend/pkg/utils"
 )
 
 type SupplierHandler struct {

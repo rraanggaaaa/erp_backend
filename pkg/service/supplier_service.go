@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/rraanggaaaa/erp_backend/internal/model"
-	"github.com/rraanggaaaa/erp_backend/internal/repository"
+	"github.com/rraanggaaaa/erp_backend/pkg/model"
+	"github.com/rraanggaaaa/erp_backend/pkg/repository"
 )
 
 type SupplierService struct {

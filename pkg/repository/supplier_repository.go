@@ -6,8 +6,8 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/rraanggaaaa/erp_backend/internal/config"
-	"github.com/rraanggaaaa/erp_backend/internal/model"
+	"github.com/rraanggaaaa/erp_backend/pkg/config"
+	"github.com/rraanggaaaa/erp_backend/pkg/model"
 )
 
 type SupplierRepository struct{}

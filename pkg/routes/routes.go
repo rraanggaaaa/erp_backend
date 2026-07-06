@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/rraanggaaaa/erp_backend/internal/handler"
+	"github.com/rraanggaaaa/erp_backend/pkg/handler"
 )
 
 func SetupRouter() *gin.Engine {
